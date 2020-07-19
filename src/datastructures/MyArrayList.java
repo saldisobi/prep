@@ -76,7 +76,7 @@ public class MyArrayList<E> {
         myArrayList.add("10");
         myArrayList.add("11");
 
-        myArrayList.remove("9");
+        myArrayList.remove("1");
 
         for (int i = 0; i < myArrayList.size; i++) {
             System.out.println(myArrayList.get(i));
