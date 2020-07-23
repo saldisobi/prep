@@ -39,7 +39,6 @@ public class ThreeNumberSum {
 
     public static void main(String args[]) {
         List<Integer[]> result = new ThreeNumberSum().threeNumberSum(new int[]{-1, 0, 1, 2, -1, -4}, 0);
-        System.out.println(result.size());
 
     }
 }
