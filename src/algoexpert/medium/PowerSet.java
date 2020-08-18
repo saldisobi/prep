@@ -21,7 +21,7 @@ public class PowerSet {
             integers.remove(integers.size() - 1);
         }
     }
-    
+
     public static void main(String args[]) {
         System.out.println(new PowerSet().getPowerSet(new int[]{1, 2, 3}));
     }
