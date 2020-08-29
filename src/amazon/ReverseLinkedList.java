@@ -29,16 +29,17 @@ public class ReverseLinkedList {
     public ListNode reverseList(ListNode head) {
 
         ListNode currentNode = head;
+
         ListNode previousNode = null;
 
         while (currentNode != null) {
-           ListNode tempNode = currentNode.next;
+            ListNode tempNode = currentNode.next;
 
-           currentNode.next = previousNode;
+            currentNode.next = previousNode;
 
-           previousNode = currentNode;
+            previousNode = currentNode;
 
-           currentNode = tempNode;
+            currentNode = tempNode;
 
         }
 
