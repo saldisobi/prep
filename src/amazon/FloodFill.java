@@ -36,7 +36,7 @@ public class FloodFill {
     private void addNeighboursToQueue(Pair<Integer, Integer> pollPair, Queue<Pair<Integer, Integer>> pixelsQueue, int[][] image, int newColor) {
         if ((pollPair.getKey() + 1) < image.length) {
             if (image[pollPair.getKey() + 1][pollPair.getValue()] != newColor) {
-                pixelsQueue.add(new Pair<>(pollPair.getKey() + 1, pollPair.getValue()))
+                pixelsQueue.add(new Pair<>(pollPair.getKey() + 1, pollPair.getValue()));
             }
         }
 
