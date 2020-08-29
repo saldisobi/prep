@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 class JewelAndStones {
-    
+
     public int numJewelsInStones(String J, String S) {
         
         int jewelCount = 0 ;
