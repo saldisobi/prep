@@ -21,6 +21,8 @@ public class WallsAndGate {
             return;
         }
 
+        rooms[i][j] = count;
+
         updateReachabilityCount(i + 1, j, rooms, count + 1);
         updateReachabilityCount(i - 1, j, rooms, count + 1);
         updateReachabilityCount(i, j - 1, rooms, count + 1);
