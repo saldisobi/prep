@@ -3,7 +3,7 @@ package amazon;
 import java.util.HashSet;
 import java.util.Set;
 
-class Solution {
+class ReverseVowels {
     public String reverseVowels(String s) {
 
         int start = 0;
@@ -59,6 +59,6 @@ class Solution {
     }
 
     public static void main(String args[]){
-        System.out.println(new Solution().reverseVowels("hello"));
+        System.out.println(new ReverseVowels().reverseVowels("hello"));
     }
 }
