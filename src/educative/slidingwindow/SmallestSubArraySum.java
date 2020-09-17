@@ -1,4 +1,4 @@
-package educative;
+package educative.slidingwindow;
 
 public class SmallestSubArraySum {
 

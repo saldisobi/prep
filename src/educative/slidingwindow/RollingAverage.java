@@ -1,4 +1,4 @@
-package educative;
+package educative.slidingwindow;
 
 import java.util.ArrayList;
 import java.util.List;
