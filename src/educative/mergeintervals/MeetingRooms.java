@@ -12,7 +12,6 @@ public class MeetingRooms {
 
         Arrays.sort(meetings, (a, b) -> Integer.compare(a[0], b[0]));
 
-        int minRooms = 0;
 
         PriorityQueue<int[]> meetingRooms = new PriorityQueue<>(meetings.length, (a, b) -> Integer.compare(a[1], b[1]));
         meetingRooms.add(meetings[0]);
@@ -32,7 +31,7 @@ public class MeetingRooms {
         return meetingRooms.size();
     }
 
-    public static void main(String args[]){
-        System.out.println(new MeetingRooms().findMinimumMeetingRooms(new int[][]{{1,2},{2,3},{2,5}}));
+    public static void main(String args[]) {
+        System.out.println(new MeetingRooms().findMinimumMeetingRooms(new int[][]{{1, 2}, {2, 3}, {2, 5}}));
     }
 }
