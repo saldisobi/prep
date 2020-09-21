@@ -26,6 +26,6 @@ public class CyclicSort {
 
 
     public static void main(String args[]) {
-        System.out.println(Arrays.toString(new CyclicSort().cyclicSort(new int[]{2, 3, 1, 0})));
+        System.out.println(Arrays.toString(new CyclicSort().cyclicSort(new int[]{2, 3, 3, 0})));
     }
 }
