@@ -4,44 +4,49 @@ public class ReverseSubLinkedList {
 
     LinkedListNode rootNode;
 
-    public LinkedListNode reverseList(LinkedListNode node) {
 
-        LinkedListNode previousNode = null;
-
-        LinkedListNode currentNode = node;
-
-        LinkedListNode nextNode = null;
-
-
-        while (currentNode != null) {
-            nextNode = currentNode.next;
-
-            currentNode.next = previousNode;
-
-            previousNode = currentNode;
-
-            currentNode = nextNode;
+    private LinkedListNode reverseSubList(LinkedListNode node, int start, int end) {
+        if (node == null) {
+            return null;
         }
 
-        return previousNode;
-
-    }
-
-    private LinkedListNode reverseSubList(LinkedListNode linkedListNode, int start) {
-
-        LinkedListNode currentNode = linkedListNode;
-
-        int currentCounter = 0;
-
-        while (currentCounter < start && currentNode != null) {
-            currentNode = currentNode.next;
-            currentCounter++;
+        if (start > end) {
+            return node;
         }
 
-        currentNode.next = reverseList(currentNode);
+        LinkedListNode current = node;
 
-        return linkedListNode;
+        LinkedListNode previous = null;
 
+        while (start > 1) {
+            previous = current;
+            current = current.next;
+
+            start--;
+            end--;
+        }
+
+        LinkedListNode connection = previous, tail = current;
+
+        LinkedListNode tempCurrent = null;
+
+        while (end > 0) {
+            tempCurrent = current.next;
+            current.next = previous;
+            previous = current;
+            current = tempCurrent;
+            end--;
+        }
+
+        if(connection!=null){
+            connection.next = previous;
+        }else{
+            node = previous;
+        }
+
+        tail.next = current;
+
+        return node;
 
     }
 
@@ -53,7 +58,7 @@ public class ReverseSubLinkedList {
         linkedListNode.next.next.next.next = new LinkedListNode(5);
         linkedListNode.next.next.next.next.next = new LinkedListNode(6);
 
-        linkedListNode = new ReverseSubLinkedList().reverseSubList(linkedListNode, 0);
+        linkedListNode = new ReverseSubLinkedList().reverseSubList(linkedListNode, 2, 3);
 
         System.out.println(linkedListNode.data);
         System.out.println(linkedListNode.next.data);
