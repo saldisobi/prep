@@ -18,13 +18,13 @@ public class LargestK {
 
         int[] result = new int[K];
 
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>((a, b) -> b - a);
 
         for (int i = 0; i < nums.length; i++) {
             if (i < K) {
                 minHeap.add(nums[i]);
             } else {
-                if (minHeap.peek() < nums[i]) {
+                if (minHeap.peek() > nums[i]) {
                     minHeap.remove();
                     minHeap.add(nums[i]);
                 }
