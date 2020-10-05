@@ -1,33 +1,38 @@
-package dp;
+package dp.lcs;
 
-public class LongestCommonSubSequence {
+public class LongestCommonSubString {
 
-    public int getLongestCommonSubSequence(String s1, String s2) {
+
+    public int getLongestCommonSubString(String s1, String s2) {
 
         int[][] lookUpTable = new int[s1.length() + 1][s2.length() + 1];
 
+        int maxLength = 0;
+
         for (int i = 0; i < lookUpTable.length; i++) {
             for (int j = 0; j < lookUpTable[i].length; j++) {
-
                 if (i == 0 || j == 0) {
                     lookUpTable[i][j] = 0;
                 } else if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
-                    // two character match we take diagonal value and add 1
                     lookUpTable[i][j] = lookUpTable[i - 1][j - 1] + 1;
 
                 } else {
-                    lookUpTable[i][j] = Integer.max(lookUpTable[i - 1][j], lookUpTable[i][j - 1]);
+                    lookUpTable[i][j] = 0;
+                }
+
+                if (lookUpTable[i][j] > maxLength) {
+                    maxLength = lookUpTable[i][j];
                 }
             }
         }
 
-
-        return lookUpTable[s1.length()][s2.length()];
-
+        return maxLength;
 
     }
 
     public static void main(String args[]) {
-        System.out.println(new LongestCommonSubSequence().getLongestCommonSubSequence("saurabh", "saurach"));
+        System.out.println(new LongestCommonSubString().getLongestCommonSubString("saurach", "saurabh"));
     }
+
+
 }
