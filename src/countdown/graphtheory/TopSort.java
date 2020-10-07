@@ -31,11 +31,9 @@ public class TopSort {
 
         Stack<Integer> stack = new Stack();
 
-        int currentPointer = graph.size - 1;
-
         for (int i = 0; i < graph.size; i++) {
             if (!visited[i]) {
-                dfs(graph, stack, currentPointer, visited, i);
+                dfs(graph, stack, visited, i);
             }
         }
 
@@ -43,7 +41,7 @@ public class TopSort {
 
     }
 
-    private void dfs(Graph graph, Stack<Integer> stack, int currentPointer, boolean[] visited, int index) {
+    private void dfs(Graph graph, Stack<Integer> stack, boolean[] visited, int index) {
         if (!visited[index]) {
             visited[index] = true;
             List<Integer> edges = graph.graph.get(index);
@@ -53,7 +51,7 @@ public class TopSort {
 
             for (int i = 0; i < edges.size(); i++) {
                 if (!visited[edges.get(i)]) {
-                    dfs(graph, stack, currentPointer, visited, edges.get(i));
+                    dfs(graph, stack, visited, edges.get(i));
                 }
             }
         }
