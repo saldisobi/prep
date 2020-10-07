@@ -33,6 +33,6 @@ public class LongestPalindrome {
     }
 
     public static void main(String args[]) {
-        System.out.println(new LongestPalindrome().getLongestPalindromeLength("agbdba"));
+        System.out.println(new LongestPalindrome().getLongestPalindromeLength("wwwwaaabababaaawwwd"));
     }
 }
