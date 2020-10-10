@@ -46,15 +46,37 @@ public class StringCompression {
             insertingIndex = insertingIndex + i;
             result[insertingIndex] = nums[i];
         }
-        
-
 
 
         return result;
     }
 
+
+    private String compressString(String input) {
+        int currentCounter = 1;
+
+        StringBuilder res = new StringBuilder();
+        for (int i = 0; i < input.length() - 1; i++) {
+
+            if (input.charAt(i) == input.charAt(i + 1)) {
+                currentCounter++;
+            } else {
+                res.append(input.charAt(i));
+                res.append(currentCounter);
+                currentCounter = 1;
+            }
+
+        }
+
+        res.append(input.charAt(input.length() - 1));
+        res.append(currentCounter);
+
+        return res.toString();
+    }
+
     public static void main(String args[]) {
         System.out.println(new StringCompression().compressString("aabcccccaaa".toCharArray()));
+        System.out.println(new StringCompression().compressString("aabcccccaaa"));
     }
 
 
