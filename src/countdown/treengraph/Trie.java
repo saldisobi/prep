@@ -1,4 +1,4 @@
-package datastructures;
+package countdown.treengraph;
 
 public class Trie {
 
